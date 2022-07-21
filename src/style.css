@@ -1,0 +1,42 @@
+.header {
+    height: 100px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.blue--border {
+    border: 2px dotted blue;
+}
+
+.pente--box {
+    width: 35px;
+    height: 35px;
+    padding: 1px;
+    background: #59E391;
+    border: 1px solid black;
+    border-radius: 0px;
+    display: inline-block;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.box--text {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 0px;
+    text-align: center;
+
+    color: #2B283A;
+}
+
+.box--table {
+    width: 600px;
+    height: 600px;
+    left: 0px;
+    top: 0px;
+}
