@@ -688,6 +688,107 @@ function robotPlay()
   
   }
 
+//block four in a row
+for(let i=iStart; continueR(i,iEnds); i=i+iIncrement)
+  for(let j=jStart; continueR(j,jEnds); j=j+jIncrement)
+  {
+    if(getValue(i,j)===0)
+    {
+      let count=0
+      let pos=1
+      while(pos<5 && j-pos>=0 && getValue(i,j-pos)===1)
+      {
+        count++;
+        pos++;
+      }
+      pos=1
+      while(pos<5 && j+pos<ts && getValue(i,j+pos)===1)
+      {
+        count++;
+        pos++;
+      }
+      if(count>=3)
+      {
+        setValue(i, j, 2)
+        actualPlayer=1
+        checkPair(i, j, 2)
+        checkFiveRow(i, j, 2)
+        setPlayer(1)
+        return
+      }
+      
+      count=0
+      pos=1
+      while(pos<5 && i+pos<ts && j-pos>=0 && getValue(i+pos,j-pos)===1)
+      {
+        count++;
+        pos++;
+      }
+      pos=1
+      while(pos<5 && i-pos>=0 && j+pos<ts && getValue(i-pos,j+pos)===1)
+      {
+        count++;
+        pos++;
+      }
+      if(count>=3)
+      {
+        setValue(i, j, 2)
+        actualPlayer=1
+        checkPair(i, j, 2)
+        checkFiveRow(i, j, 2)
+        setPlayer(1)
+        return
+      }
+      
+      count=0
+      pos=1
+      while(pos<5 && i+pos<ts && getValue(i+pos,j)===1)
+      {
+        count++;
+        pos++;
+      }
+      pos=1
+      while(pos<5 && i-pos>=0 && getValue(i-pos,j)===1)
+      {
+        count++;
+        pos++;
+      }
+      if(count>=3)
+      {
+        setValue(i, j, 2)
+        actualPlayer=1
+        checkPair(i, j, 2)
+        checkFiveRow(i, j, 2)
+        setPlayer(1)
+        return
+      }
+
+      count=0
+      pos=1
+      while(pos<5 && i+pos<ts && j+pos<ts && getValue(i+pos,j+pos)===1)
+      {
+        count++;
+        pos++;
+      }
+      pos=1
+      while(pos<5 && i-pos>=0 && j-pos>=0 && getValue(i-pos,j-pos)===1)
+      {
+        count++;
+        pos++;
+      }
+      if(count>=3)
+      {
+        setValue(i, j, 2)
+        actualPlayer=1
+        checkPair(i, j, 2)
+        checkFiveRow(i, j, 2)
+        setPlayer(1)
+        return
+      }
+      
+    }
+
+  }
 
 
   //block three in row
@@ -808,108 +909,7 @@ function robotPlay()
       }
     }
 
-  //block four in a row
-  for(let i=iStart; continueR(i,iEnds); i=i+iIncrement)
-    for(let j=jStart; continueR(j,jEnds); j=j+jIncrement)
-    {
-      if(getValue(i,j)===0)
-      {
-        let count=0
-        let pos=1
-        while(pos<5 && j-pos>=0 && getValue(i,j-pos)===1)
-        {
-          count++;
-          pos++;
-        }
-        pos=1
-        while(pos<5 && j+pos<ts && getValue(i,j+pos)===1)
-        {
-          count++;
-          pos++;
-        }
-        if(count>=3)
-        {
-          setValue(i, j, 2)
-          actualPlayer=1
-          checkPair(i, j, 2)
-          checkFiveRow(i, j, 2)
-          setPlayer(1)
-          return
-        }
-        
-        count=0
-        pos=1
-        while(pos<5 && i+pos<ts && j-pos>=0 && getValue(i+pos,j-pos)===1)
-        {
-          count++;
-          pos++;
-        }
-        pos=1
-        while(pos<5 && i-pos>=0 && j+pos<ts && getValue(i-pos,j+pos)===1)
-        {
-          count++;
-          pos++;
-        }
-        if(count>=3)
-        {
-          setValue(i, j, 2)
-          actualPlayer=1
-          checkPair(i, j, 2)
-          checkFiveRow(i, j, 2)
-          setPlayer(1)
-          return
-        }
-        
-        count=0
-        pos=1
-        while(pos<5 && i+pos<ts && getValue(i+pos,j)===1)
-        {
-          count++;
-          pos++;
-        }
-        pos=1
-        while(pos<5 && i-pos>=0 && getValue(i-pos,j)===1)
-        {
-          count++;
-          pos++;
-        }
-        if(count>=3)
-        {
-          setValue(i, j, 2)
-          actualPlayer=1
-          checkPair(i, j, 2)
-          checkFiveRow(i, j, 2)
-          setPlayer(1)
-          return
-        }
-
-        count=0
-        pos=1
-        while(pos<5 && i+pos<ts && j+pos<ts && getValue(i+pos,j+pos)===1)
-        {
-          count++;
-          pos++;
-        }
-        pos=1
-        while(pos<5 && i-pos>=0 && j-pos>=0 && getValue(i-pos,j-pos)===1)
-        {
-          count++;
-          pos++;
-        }
-        if(count>=3)
-        {
-          setValue(i, j, 2)
-          actualPlayer=1
-          checkPair(i, j, 2)
-          checkFiveRow(i, j, 2)
-          setPlayer(1)
-          return
-        }
-        
-      }
-    
-    }
-
+  
 
   //block multiple five in a row options
   for(let i=iStart; continueR(i,iEnds); i=i+iIncrement)
