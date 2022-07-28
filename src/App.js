@@ -1702,7 +1702,7 @@ return (
         <span className="game--title">Pente</span>
         {single!==0 ? player2Score : ""}
       </div>
-      <div className="main">
+      <div className="body">
         {winner===1 ? winnerText1 : ""}
         {winner===2 ? winnerText2 : ""}
         {winner!==-1 ? restartButton : ""}

@@ -126,7 +126,9 @@
     transition: 1s all ease;
 }
 
-.main {
+.body {
+    width: 560px;
+    min-width: 560px;
     display: flex;
     justify-content: center;
 }
