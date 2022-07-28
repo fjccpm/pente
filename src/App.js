@@ -71,7 +71,7 @@ React.useEffect(
   () => {
     setPlays(prev => prev+1)
     console.log("actual player: " + player + " no. plays: " + plays)
-    if(single===1 && player===2 && winner===-1)
+    if(single===1 && player===2 && winner===-1 && !fiveRow1 && scorep1<5)
     {
       robotPlay()
     }
