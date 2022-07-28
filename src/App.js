@@ -1406,106 +1406,106 @@ for(let j=jStart; continueR(j,jEnds); j=j+jIncrement)
 
   
     //try to do 3 or more in a row
-  for(let i=iStart; continueR(i,iEnds); i=i+iIncrement)
-  for(let j=jStart; continueR(j,jEnds); j=j+jIncrement)
-  {
-    if(getValue(i,j)===0)
-    {
-      let count=0
-      let pos=1
-      while(pos<5 && j-pos>=0 && getValue(i,j-pos)===2)
-      {
-        count++;
-        pos++;
-      }
-      pos=1
-      while(pos<5 && j+pos<ts && getValue(i,j+pos)===2)
-      {
-        count++;
-        pos++;
-      }
-      if(count>=2)
-      {
-        setValue(i, j, 2)
-        actualPlayer=1
-        checkPair(i, j, 2)
-        checkFiveRow(i, j, 2)
-        setPlayer(1)
-        return
-      }
+  // for(let i=iStart; continueR(i,iEnds); i=i+iIncrement)
+  // for(let j=jStart; continueR(j,jEnds); j=j+jIncrement)
+  // {
+  //   if(getValue(i,j)===0)
+  //   {
+  //     let count=0
+  //     let pos=1
+  //     while(pos<5 && j-pos>=0 && getValue(i,j-pos)===2)
+  //     {
+  //       count++;
+  //       pos++;
+  //     }
+  //     pos=1
+  //     while(pos<5 && j+pos<ts && getValue(i,j+pos)===2)
+  //     {
+  //       count++;
+  //       pos++;
+  //     }
+  //     if(count>=2)
+  //     {
+  //       setValue(i, j, 2)
+  //       actualPlayer=1
+  //       checkPair(i, j, 2)
+  //       checkFiveRow(i, j, 2)
+  //       setPlayer(1)
+  //       return
+  //     }
       
-      count=0
-      pos=1
-      while(pos<5 && i+pos<ts && j-pos>=0 && getValue(i+pos,j-pos)===2)
-      {
-        count++;
-        pos++;
-      }
-      pos=1
-      while(pos<5 && i-pos>=0 && j+pos<ts && getValue(i-pos,j+pos)===2)
-      {
-        count++;
-        pos++;
-      }
-      if(count>=2)
-      {
-        setValue(i, j, 2)
-        actualPlayer=1
-        checkPair(i, j, 2)
-        checkFiveRow(i, j, 2)
-        setPlayer(1)
-        return
-      }
+  //     count=0
+  //     pos=1
+  //     while(pos<5 && i+pos<ts && j-pos>=0 && getValue(i+pos,j-pos)===2)
+  //     {
+  //       count++;
+  //       pos++;
+  //     }
+  //     pos=1
+  //     while(pos<5 && i-pos>=0 && j+pos<ts && getValue(i-pos,j+pos)===2)
+  //     {
+  //       count++;
+  //       pos++;
+  //     }
+  //     if(count>=2)
+  //     {
+  //       setValue(i, j, 2)
+  //       actualPlayer=1
+  //       checkPair(i, j, 2)
+  //       checkFiveRow(i, j, 2)
+  //       setPlayer(1)
+  //       return
+  //     }
       
-      count=0
-      pos=1
-      while(pos<5 && i+pos<ts && getValue(i+pos,j)===2)
-      {
-        count++;
-        pos++;
-      }
-      pos=1
-      while(pos<5 && i-pos>=0 && getValue(i-pos,j)===2)
-      {
-        count++;
-        pos++;
-      }
-      if(count>=2)
-      {
-        setValue(i, j, 2)
-        actualPlayer=1
-        checkPair(i, j, 2)
-        checkFiveRow(i, j, 2)
-        setPlayer(1)
-        return
-      }
+  //     count=0
+  //     pos=1
+  //     while(pos<5 && i+pos<ts && getValue(i+pos,j)===2)
+  //     {
+  //       count++;
+  //       pos++;
+  //     }
+  //     pos=1
+  //     while(pos<5 && i-pos>=0 && getValue(i-pos,j)===2)
+  //     {
+  //       count++;
+  //       pos++;
+  //     }
+  //     if(count>=2)
+  //     {
+  //       setValue(i, j, 2)
+  //       actualPlayer=1
+  //       checkPair(i, j, 2)
+  //       checkFiveRow(i, j, 2)
+  //       setPlayer(1)
+  //       return
+  //     }
 
-      count=0
-      pos=1
-      while(pos<5 && i+pos<ts && j+pos<ts && getValue(i+pos,j+pos)===2)
-      {
-        count++;
-        pos++;
-      }
-      pos=1
-      while(pos<5 && i-pos>=0 && j-pos>=0 && getValue(i-pos,j-pos)===2)
-      {
-        count++;
-        pos++;
-      }
-      if(count>=2)
-      {
-        setValue(i, j, 2)
-        actualPlayer=1
-        checkPair(i, j, 2)
-        checkFiveRow(i, j, 2)
-        setPlayer(1)
-        return
-      }
+  //     count=0
+  //     pos=1
+  //     while(pos<5 && i+pos<ts && j+pos<ts && getValue(i+pos,j+pos)===2)
+  //     {
+  //       count++;
+  //       pos++;
+  //     }
+  //     pos=1
+  //     while(pos<5 && i-pos>=0 && j-pos>=0 && getValue(i-pos,j-pos)===2)
+  //     {
+  //       count++;
+  //       pos++;
+  //     }
+  //     if(count>=2)
+  //     {
+  //       setValue(i, j, 2)
+  //       actualPlayer=1
+  //       checkPair(i, j, 2)
+  //       checkFiveRow(i, j, 2)
+  //       setPlayer(1)
+  //       return
+  //     }
       
-    }
+  //   }
   
-  }
+  // }
 
 
   //other plays after blocking and searching for captures or pente opps.
