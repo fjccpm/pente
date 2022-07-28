@@ -288,6 +288,8 @@
 }
 
 .footer {
+    width: 560px;
+    min-width: 560px;
     padding: 10px;
     display: flex;
     justify-content: center;
