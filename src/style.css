@@ -10,8 +10,10 @@
 
 .header {
     height: 120px;
+    width: 550px;
+    min-width: 550px;
     background: white;
-    margin: 0px;
+    margin: 0px auto 0px auto;
     padding: 0px;
     display: inline-block center;
     text-align: center;
