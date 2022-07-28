@@ -1,5 +1,127 @@
+@font-face {
+    src: url("Star Gold.otf");
+    font-family: starGold;
+}
+
+@font-face {
+    src: url("Road_Rage.otf");
+    font-family: road;
+}
+
 .header {
-    height: 100px;
+    height: 120px;
+    background: white;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block center;
+    text-align: center;
+}
+
+.p1--score {
+    font-family: road;
+    font-size: large;
+    width: 150px;
+    text-shadow: 0 0 10px #E63946;
+}
+
+.p2--score {
+    font-family: road;
+    font-size: large;
+    width: 150px;
+    text-shadow: 0 0 10px #1D3557;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 0px white;
+    }
+    25% {
+        text-shadow: 0 0 10px #E63946;
+    }
+    50% {
+        text-shadow: 0 0 0px white;
+    }
+    
+    75% {
+        text-shadow: 0 0 10px #1D3557;
+    }
+}
+
+@keyframes glow1 {
+    0% {
+        text-shadow: 0 0 0px white;
+    }
+    100% {
+        text-shadow: 0 0 20px black;
+    }
+}
+
+@keyframes glow2 {
+    0% {
+        text-shadow: 0 0 0px white;
+    }
+    100% {
+        text-shadow: 0 0 20px black;
+    }
+}
+
+
+.game--title {
+    font-family: road;
+    font-size: 48pt;
+    width: 200px;
+    margin: 30px 30px 0 30px;
+    animation: glow 10s infinite ease; /* alternate;*/
+}
+
+.winner--text1 {
+    position: absolute;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: road;
+    font-size: 48pt;
+    width: 500px;
+    color: #E63946;
+    /* margin: 30px 30px 0 30px; */
+    animation: glow1 2s infinite ease alternate;
+}
+
+.winner--text2 {
+    position: absolute;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: road;
+    font-size: 48pt;
+    width: 500px;
+    color: #1D3557;
+    /* margin: 30px 30px 0 30px; */
+    animation: glow2 2s infinite ease alternate;
+}
+
+.restart--game {
+    position: absolute;
+    margin-top: 450px;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: #1D3557;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.restart--game:hover {
+    color: #0B2434;
+    background: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 1s all ease;
 }
 
 .main {
@@ -12,31 +134,188 @@
 }
 
 .pente--box {
+    margin: 0px 0px 0px 0px;
     width: 35px;
     height: 35px;
-    padding: 1px;
-    background: #59E391;
     border: 1px solid black;
     border-radius: 0px;
     display: inline-block;
     justify-content: center;
     cursor: pointer;
+    background-color: #F5F5F5;
 }
 
-.box--text {
+.token {
+    margin: 2px 0px 0px 2px;
+    border-radius: 100%;
+    width: 28px;
+    height: 28px;
     font-family: 'Karla';
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
-    line-height: 0px;
-    text-align: center;
-
+    font-size: 10px;
+    text-align: center; 
+    display: inline-block;
+    justify-content: center;
     color: #2B283A;
 }
 
 .box--table {
-    width: 600px;
-    height: 600px;
-    left: 0px;
-    top: 0px;
+    width: 560px;
+    height: 560px;
+    margin: 0px auto 0px auto;
+    display: inline-block center;
+    text-align: center;
 }
+
+@keyframes fade {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-300px);
+    }
+    to { 
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+.rules--window {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    margin: 0px auto 0px auto;
+    padding: 30px;
+    background: whitesmoke;
+    border-radius: 10px;
+    border: 2px solid black; 
+    box-shadow: rgba(0, 0, 0, 0.35) 15px 15px 20px;
+    animation: fade 2s linear forwards;
+}
+
+.rules--title {
+    font-family: road;
+    font-size: larger;
+    width: 130px;
+    margin: 0px auto 0px auto;
+    text-shadow: 0 0 10px #1D3557; 
+}
+
+.rules--description {
+    font-family: road;
+    font-size: small;
+    font-weight: 100;
+    width: 290px;
+    margin-top: 40px;
+    /* margin: 0px auto 0px auto; */
+    text-shadow: 0 0 10px #1D3557; 
+}
+
+.go--back {
+    margin: 0 auto;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    /* background: #1D3557; */
+    background: #E63946;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    margin-top: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.go--back:hover {
+    color: #0B2434;
+    background: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 1s all ease;
+}
+
+
+.mode--window {
+    width: 300px;
+    height: 300px;
+    margin: 0px auto 0px auto;
+    padding: 30px;
+    background: #1D3557;
+    border-radius: 10px;
+}
+
+.mode--subwindow {
+    width: 300px;
+    height: 300px;
+    margin: 0px auto 0px auto;
+    /* background: #A8DADC; */
+    background: #f1faee;
+    border-radius: 10px;
+    position: absolute;
+    justify-content: center;
+}
+
+.mode--button {
+    margin: 0 auto;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    background: #1D3557;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    margin-top: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.mode--button:hover {
+    color: #0B2434;
+    background: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 1s all ease;
+}
+
+.footer {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.signature--created {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: smaller;
+}
+
+.signature {
+    padding-left: 10px;
+    font-family: 'starGold';
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
