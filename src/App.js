@@ -115,7 +115,7 @@ function initializeGame() {
       setTable(temp)
       setWinner(-1)
       setScorep1(0)
-      setScorep1(0)
+      setScorep2(0)
       setFiveRow1(false)
       setFiveRow2(false)
       setPente(false)
